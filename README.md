@@ -30,8 +30,7 @@ html_sides_ai_generator/
 1. 用浏览器打开 `index.html` 即可查看演示文稿
 2. 使用底部按钮或键盘左右箭头键切换幻灯片
 3. 将图片放入 `assets/` 文件夹中使用
-4. 下载claude code，并配置你想用的模型（如[deepseek](https://api-docs.deepseek.com/zh-cn/guides/anthropic_api)
-5. 
+4. 下载claude code，并配置你想用的模型（如[deepseek](https://api-docs.deepseek.com/zh-cn/guides/anthropic_api))
 
 ## 主题自定义指南
 
