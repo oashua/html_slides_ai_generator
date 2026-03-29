@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI驱动的HTML演示文稿</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.13.0/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>
+</head>
+<body>
+    <div class="presentation">
+        <!-- 幻灯片1: 标题页 -->
+        <section class="slide" id="slide1">
+            <div class="title-content">
+                <img src="assets/logo.svg" alt="HTML Slides AI Logo" class="title-logo">
+                <h1>为何AI利用HTML制作演示文稿更好</h1>
+                <p class="subtitle">现代化、灵活、可编程的演示方案</p>
+                <p class="author">AI Generated Presentation</p>
+            </div>
+        </section>
+
+        <!-- 幻灯片2: 核心优势 -->
+        <section class="slide" id="slide2">
+            <h2>HTML演示文稿的核心优势</h2>
+            <div class="content-grid">
+                <div class="feature-box">
+                    <h3>🎨 完全可定制</h3>
+                    <p>通过CSS实现任意样式</p>
+                </div>
+                <div class="feature-box">
+                    <h3>📱 响应式设计</h3>
+                    <p>适配所有设备屏幕</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🔧 易于维护</h3>
+                    <p>纯文本格式，版本控制友好</p>
+                </div>
+                <div class="feature-box">
+                    <h3>⚡ 轻量高效</h3>
+                    <p>无需专用软件，浏览器即可</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🤖 AI原生支持</h3>
+                    <p>避免操作PowerPoint等复杂软件</p>
+                </div>
+                <div class="feature-box">
+                    <h3>💰 零成本方案</h3>
+                    <p>无需付费工具，任何模型均可接入</p>
+                </div>
+                <div class="feature-box">
+                    <h3>📚 训练数据丰富</h3>
+                    <p>大模型HTML代码生成质量高</p>
+                </div>
+                <div class="feature-box">
+                    <h3>🚀 快速迭代</h3>
+                    <p>AI直接生成代码，即时预览</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 幻灯片3: 数据图表 -->
+        <section class="slide" id="slide3">
+            <h2>性能对比分析</h2>
+            <div class="chart-container">
+                <div class="chart-title">文件大小对比 (MB)</div>
+                <div class="bar-chart">
+                    <div class="bar-group">
+                        <div class="bar" style="height: 80%;" data-value="8.5"></div>
+                        <div class="bar-label">PowerPoint</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 65%;" data-value="6.2"></div>
+                        <div class="bar-label">Keynote</div>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar" style="height: 15%;" data-value="0.5"></div>
+                        <div class="bar-label">HTML</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 幻灯片4: 数学公式 -->
+        <section class="slide" id="slide4">
+            <h2>支持复杂数学公式</h2>
+            <div class="formula-container">
+                <div class="formula-title">AI模型损失函数</div>
+                <div class="formula">
+                    $$L(\theta) = -\sum_{i=1}^{n} [y_i \log(\hat{y}_i) + (1-y_i) \log(1-\hat{y}_i)]$$
+                </div>
+                <div class="formula-title">梯度下降更新规则</div>
+                <div class="formula">
+                    $$\theta_{t+1} = \theta_t - \alpha \nabla L(\theta_t)$$
+                </div>
+                <div class="formula-title">注意力机制</div>
+                <div class="formula">
+                    $$\text{Attention}(Q, K, V) = \text{softmax}\left(\frac{QK^T}{\sqrt{d_k}}\right)V$$
+                </div>
+            </div>
+        </section>
+
+        <!-- 幻灯片5: 流程图 -->
+        <section class="slide" id="slide5">
+            <h2>AI生成演示文稿流程</h2>
+
+            <div class="mermaid">
+            graph TD
+            A[Client] -->|tcp_123| B
+            B(Load Balancer)
+            B -->|tcp_456| C[Server1]
+            B -->|tcp_456| D[Server2]
+    </div>
+        </section>
+
+        <!-- 幻灯片6: 图片展示 -->
+        <section class="slide" id="slide6">
+            <h2>丰富的媒体支持</h2>
+            <div class="image-container">
+                <img src="assets/logo.svg" alt="HTML Slides AI Logo" class="demo-image">
+                <p class="image-caption">图1: HTML演示文稿可轻松嵌入各类媒体资源（SVG矢量图）</p>
+            </div>
+        </section>
+
+        <!-- 幻灯片7: 总结 -->
+        <section class="slide" id="slide7">
+            <h2>总结</h2>
+            <ul class="summary-list">
+                <li>HTML演示文稿具有无与伦比的灵活性</li>
+                <li>AI可以快速生成结构化的HTML内容</li>
+                <li>通过CSS实现主题的完全控制</li>
+                <li>跨平台、轻量级、易于分享</li>
+                <li>支持版本控制和协作开发</li>
+            </ul>
+            <div class="cta">
+                <p>开始使用HTML创建你的下一个演示文稿！</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- 导航控制 -->
+    <div class="controls">
+        <button id="prevBtn" onclick="changeSlide(-1)">◀ 上一页</button>
+        <span id="slideNumber">1 / 7</span>
+        <button id="nextBtn" onclick="changeSlide(1)">下一页 ▶</button>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                ]
+            });
+        });
+    </script>
+</body>
+</html>
