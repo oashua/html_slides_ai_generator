@@ -1,5 +1,5 @@
 let currentSlide = 1;
-const totalSlides = 7;
+const totalSlides = 9;
 
 function showSlide(n) {
     const slides = document.querySelectorAll('.slide');
@@ -28,3 +28,33 @@ document.addEventListener('keydown', (e) => {
 
 // 初始化
 showSlide(currentSlide);
+
+// 导出PDF（使用浏览器原生打印）
+function exportToPDF() {
+    window.print();
+}
+
+// 溢出检测
+function checkOverflow() {
+    const slides = document.querySelectorAll('.slide');
+    slides.forEach((slide, i) => {
+        const overflow = slide.scrollHeight - slide.clientHeight;
+        if (overflow > 0) {
+            console.warn(
+                `[溢出警告] 第 ${i + 1} 页 (#${slide.id}) 内容溢出 ${overflow}px`
+            );
+        }
+    });
+}
+
+// 页面加载完成后检测所有 slide 溢出
+window.addEventListener('load', () => {
+    // 临时显示所有 slide 以计算真实高度
+    const slides = document.querySelectorAll('.slide');
+    const saved = currentSlide;
+    slides.forEach(s => s.classList.add('active'));
+    checkOverflow();
+    slides.forEach(s => s.classList.remove('active'));
+    currentSlide = saved;
+    showSlide(currentSlide);
+});

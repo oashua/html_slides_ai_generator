@@ -77,6 +77,26 @@ body {
     to { opacity: 1; transform: translateX(0); }
 }
 
+/* ==================== 幻灯片布局属性 ==================== */
+/* 用法: <section class="slide" data-direction="row" data-justify="center" data-align="center"> */
+
+/* 排列方向 */
+.slide[data-direction="row"]    { flex-direction: row; }
+.slide[data-direction="column"] { flex-direction: column; }
+
+/* 主轴对齐 (justify-content) */
+.slide[data-justify="start"]   { justify-content: flex-start; }
+.slide[data-justify="center"]  { justify-content: center; }
+.slide[data-justify="end"]     { justify-content: flex-end; }
+.slide[data-justify="between"] { justify-content: space-between; }
+.slide[data-justify="around"]  { justify-content: space-around; }
+
+/* 交叉轴对齐 (align-items) */
+.slide[data-align="start"]     { align-items: flex-start; }
+.slide[data-align="center"]    { align-items: center; }
+.slide[data-align="end"]       { align-items: flex-end; }
+.slide[data-align="stretch"]   { align-items: stretch; }
+
 /* ==================== 标题样式 ==================== */
 
 h1 {
@@ -89,9 +109,9 @@ h1 {
 h2 {
     font-size: var(--font-size-h2);
     color: var(--primary-color);
-    margin-bottom: 40px;
+    margin-bottom: 25px;
     border-bottom: 4px solid var(--accent-color);
-    padding-bottom: 15px;
+    padding-bottom: 10px;
     flex-shrink: 0;
 }
 
@@ -232,8 +252,11 @@ h3 {
 .formula-container {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    flex: 1;
+    min-height: 0;
+    gap: 12px;
     align-items: center;
+    justify-content: center;
 }
 
 .formula-title {
@@ -244,7 +267,7 @@ h3 {
 
 .formula {
     background: #f9fafb;
-    padding: 25px 40px;
+    padding: 12px 30px;
     border-radius: 10px;
     border: 2px solid var(--accent-color);
     font-size: 1.4rem;
@@ -301,12 +324,88 @@ h3 {
 }
 
 .summary-list li::before {
-    content: '✓';
+    content: '\2713';
     position: absolute;
     left: 0;
     color: var(--primary-color);
     font-weight: 700;
     font-size: 1.5rem;
+}
+
+/* ==================== 参数表格 ==================== */
+
+.param-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+.param-table th,
+.param-table td {
+    border: 1px solid #e5e7eb;
+    padding: 10px 14px;
+    text-align: left;
+}
+
+.param-table thead th {
+    background: var(--primary-color);
+    color: #fff;
+    font-weight: 600;
+}
+
+.param-table tbody tr:nth-child(even) {
+    background: #f9fafb;
+}
+
+.param-table code {
+    background: #f3f4f6;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+/* ==================== 代码块 ==================== */
+
+.code-block {
+    background: #1f2937;
+    color: #a5f3fc;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+}
+
+/* ==================== 布局演示 ==================== */
+
+.layout-demo-row {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+    min-height: 0;
+    align-items: stretch;
+}
+
+.demo-box {
+    flex: 1;
+    padding: 25px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.demo-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.demo-box p {
+    font-size: 0.95rem;
+    color: var(--text-light);
 }
 
 .cta {
@@ -368,6 +467,60 @@ h3 {
     color: var(--text-color);
     min-width: 80px;
     text-align: center;
+}
+
+/* ==================== 响应式设计 ==================== */
+
+/* ==================== 导出按钮 ==================== */
+
+#exportBtn {
+    background: #10b981;
+}
+
+#exportBtn:hover {
+    background: #059669;
+}
+
+/* ==================== 打印导出 ==================== */
+
+@media print {
+    @page {
+        size: landscape;
+        margin: 0;
+    }
+
+    body {
+        background: none;
+        padding: 0;
+        min-height: auto;
+    }
+
+    .controls {
+        display: none !important;
+    }
+
+    .presentation {
+        width: 100vw;
+        height: auto;
+        box-shadow: none;
+        overflow: visible;
+        position: static;
+    }
+
+    .slide {
+        display: flex !important;
+        position: relative !important;
+        width: 100vw;
+        height: 100vh;
+        page-break-after: always;
+        break-after: page;
+        animation: none !important;
+    }
+
+    .slide:last-child {
+        page-break-after: avoid;
+        break-after: avoid;
+    }
 }
 
 /* ==================== 响应式设计 ==================== */

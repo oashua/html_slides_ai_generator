@@ -2,6 +2,9 @@
 
 这是一个使用HTML+CSS实现的AI演示文稿项目，展示了为何AI利用HTML制作演示文稿更好。
 
+预览：
+
+
 ## 项目结构
 
 ```
@@ -198,6 +201,7 @@ html_sides_ai_generator/
 
 ## to do
 - [ ] 导出功能
+- [ ] mermaid支持
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=oashua/html_sides_ai_generator&type=Date)](https://star-history.com/#oashua/html_sides_ai_generator&Date)

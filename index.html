@@ -16,7 +16,7 @@
 <body>
     <div class="presentation">
         <!-- 幻灯片1: 标题页 -->
-        <section class="slide" id="slide1">
+        <section class="slide" id="slide1" data-direction="column" data-justify="center" data-align="center">
             <div class="title-content">
                 <img src="assets/logo.svg" alt="HTML Slides AI Logo" class="title-logo">
                 <h1>为何AI利用HTML制作演示文稿更好</h1>
@@ -26,7 +26,7 @@
         </section>
 
         <!-- 幻灯片2: 核心优势 -->
-        <section class="slide" id="slide2">
+        <section class="slide" id="slide2" data-direction="column" data-justify="start" data-align="stretch">
             <h2>HTML演示文稿的核心优势</h2>
             <div class="content-grid">
                 <div class="feature-box">
@@ -65,7 +65,7 @@
         </section>
 
         <!-- 幻灯片3: 数据图表 -->
-        <section class="slide" id="slide3">
+        <section class="slide" id="slide3" data-direction="column" data-justify="start" data-align="center">
             <h2>性能对比分析</h2>
             <div class="chart-container">
                 <div class="chart-title">文件大小对比 (MB)</div>
@@ -87,7 +87,7 @@
         </section>
 
         <!-- 幻灯片4: 数学公式 -->
-        <section class="slide" id="slide4">
+        <section class="slide" id="slide4" data-direction="column" data-justify="start" data-align="stretch">
             <h2>支持复杂数学公式</h2>
             <div class="formula-container">
                 <div class="formula-title">AI模型损失函数</div>
@@ -106,7 +106,7 @@
         </section>
 
         <!-- 幻灯片5: 流程图 -->
-        <section class="slide" id="slide5">
+        <section class="slide" id="slide5" data-direction="column" data-justify="start" data-align="stretch">
             <h2>AI生成演示文稿流程</h2>
 
             <div class="mermaid">
@@ -119,7 +119,7 @@
         </section>
 
         <!-- 幻灯片6: 图片展示 -->
-        <section class="slide" id="slide6">
+        <section class="slide" id="slide6" data-direction="column" data-justify="start" data-align="center">
             <h2>丰富的媒体支持</h2>
             <div class="image-container">
                 <img src="assets/logo.svg" alt="HTML Slides AI Logo" class="demo-image">
@@ -127,8 +127,47 @@
             </div>
         </section>
 
-        <!-- 幻灯片7: 总结 -->
-        <section class="slide" id="slide7">
+        <!-- 幻灯片7: 布局参数说明 -->
+        <section class="slide" id="slide7" data-direction="column" data-justify="start" data-align="stretch">
+            <h2>布局参数用法</h2>
+            <p style="font-size:1rem; color:var(--text-light); margin-bottom:15px;">在 <code>&lt;section class="slide"&gt;</code> 上添加以下 data 属性即可控制布局：</p>
+            <table class="param-table">
+                <thead>
+                    <tr><th>属性</th><th>可选值</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><code>data-direction</code></td><td>column | row</td><td>排列方向：从上到下 / 从左到右</td></tr>
+                    <tr><td><code>data-justify</code></td><td>start | center | end | between | around</td><td>主轴对齐方式</td></tr>
+                    <tr><td><code>data-align</code></td><td>start | center | end | stretch</td><td>交叉轴对齐方式</td></tr>
+                </tbody>
+            </table>
+            <div class="code-block">
+                <code>&lt;section class="slide" data-direction="row" data-justify="between" data-align="center"&gt;</code>
+            </div>
+        </section>
+
+        <!-- 幻灯片8: 横向布局演示 -->
+        <section class="slide" id="slide8" data-direction="column" data-justify="start" data-align="stretch">
+            <h2>横向布局演示 <code style="font-size:0.6em; color:var(--text-light);">data-direction="row"</code></h2>
+            <div class="layout-demo-row">
+                <div class="demo-box" style="background:#dbeafe;">
+                    <h3>data-justify="start"</h3>
+                    <p>内容靠左排列</p>
+                </div>
+                <div class="demo-box" style="background:#fef3c7;">
+                    <h3>data-justify="center"</h3>
+                    <p>内容居中排列</p>
+                </div>
+                <div class="demo-box" style="background:#d1fae5;">
+                    <h3>data-justify="end"</h3>
+                    <p>内容靠右排列</p>
+                </div>
+            </div>
+            <p style="font-size:1rem; color:var(--text-light); text-align:center; margin-top:15px;">以上三个盒子使用 flex row + space-between 横向排列</p>
+        </section>
+
+        <!-- 幻灯片9: 总结 -->
+        <section class="slide" id="slide9" data-direction="column" data-justify="start" data-align="start">
             <h2>总结</h2>
             <ul class="summary-list">
                 <li>HTML演示文稿具有无与伦比的灵活性</li>
@@ -146,8 +185,9 @@
     <!-- 导航控制 -->
     <div class="controls">
         <button id="prevBtn" onclick="changeSlide(-1)">◀ 上一页</button>
-        <span id="slideNumber">1 / 7</span>
+        <span id="slideNumber">1 / 9</span>
         <button id="nextBtn" onclick="changeSlide(1)">下一页 ▶</button>
+        <button id="exportBtn" onclick="exportToPDF()">导出 PDF</button>
     </div>
 
     <script src="script.js"></script>
