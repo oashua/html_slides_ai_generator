@@ -200,7 +200,8 @@ html_sides_ai_generator/
 
 
 ## to do
-- [ ] 导出功能
+- [v] 导出功能
+  - [ ] 导出pdf尺寸与网页不一致
 - [ ] mermaid支持
 ## Star History
 

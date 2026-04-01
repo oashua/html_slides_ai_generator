@@ -29,9 +29,26 @@ document.addEventListener('keydown', (e) => {
 // 初始化
 showSlide(currentSlide);
 
-// 导出PDF（使用浏览器原生打印）
+// 导出PDF（使用浏览器原生打印，自动匹配幻灯片比例）
 function exportToPDF() {
+    const el = document.querySelector('.presentation');
+    const w = el.offsetWidth;
+    const h = el.offsetHeight;
+
+    // px → mm（96dpi: 1px ≈ 0.2646mm），缩放到 297mm 宽
+    const mmW = 297;
+    const mmH = Math.round(mmW * (h / w));
+
+    // 动态注入 @page 尺寸
+    const style = document.createElement('style');
+    style.id = 'print-page-size';
+    style.textContent = `@page { size: ${mmW}mm ${mmH}mm; margin: 0; }`;
+    document.head.appendChild(style);
+
     window.print();
+
+    // 打印对话框关闭后移除
+    style.remove();
 }
 
 // 溢出检测
