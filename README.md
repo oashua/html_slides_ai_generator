@@ -2,7 +2,7 @@
 
 这是一个使用HTML+CSS实现的AI演示文稿项目，展示了为何AI利用HTML制作演示文稿更好。
 
-预览：
+预览：[html + AI = better slides](https://oashua.github.io/html_slides_ai_generator/)
 
 
 ## 项目结构
@@ -33,7 +33,10 @@ html_sides_ai_generator/
 1. 用浏览器打开 `index.html` 即可查看演示文稿
 2. 使用底部按钮或键盘左右箭头键切换幻灯片
 3. 将图片放入 `assets/` 文件夹中使用
-4. 下载claude code，并配置你想用的模型（如[deepseek](https://api-docs.deepseek.com/zh-cn/guides/anthropic_api))
+4. [可选]下载claude code，并配置你想用的模型（如[deepseek](https://api-docs.deepseek.com/zh-cn/guides/anthropic_api))
+5. 按需修改为自己的内容，自定义样式布局，颜色，组件等
+   > 或将自己的内容交给claude code转为兼容当前样式的页面
+6. 导出
 
 ## 主题自定义指南
 
