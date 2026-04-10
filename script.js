@@ -65,11 +65,23 @@ function checkOverflow() {
 }
 
 // 页面加载完成后检测所有 slide 溢出
-window.addEventListener('load', () => {
+window.addEventListener('load', async () => {
     // 临时显示所有 slide 以计算真实高度
     const slides = document.querySelectorAll('.slide');
     const saved = currentSlide;
     slides.forEach(s => s.classList.add('active'));
+    
+    // 初始化 Mermaid，确保在元素可见且有尺寸时计算 (Mermaid 11.x 的 run 是异步的)
+    try {
+        if (typeof mermaid !== 'undefined') {
+            await mermaid.run({ querySelector: '.mermaid' });
+        } else if (window.mermaid) {
+            await window.mermaid.run({ querySelector: '.mermaid' });
+        }
+    } catch (e) {
+        console.error('Mermaid render error:', e);
+    }
+
     checkOverflow();
     slides.forEach(s => s.classList.remove('active'));
     currentSlide = saved;

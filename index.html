@@ -8,10 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.13.0/dist/mermaid.min.js"></script>
-    <script>
-      mermaid.initialize({ startOnLoad: true });
-    </script>
+    
 </head>
 <body>
     <div class="presentation">
@@ -109,13 +106,12 @@
         <section class="slide" id="slide5" data-direction="column" data-justify="start" data-align="stretch">
             <h2>AI生成演示文稿流程</h2>
 
-            <div class="mermaid">
-            graph TD
-            A[Client] -->|tcp_123| B
-            B(Load Balancer)
-            B -->|tcp_456| C[Server1]
-            B -->|tcp_456| D[Server2]
-    </div>
+            <pre class="mermaid">
+  graph LR
+      A --- B
+      B-->C[fa:fa-ban forbidden]
+      B-->D(fa:fa-spinner);
+    </pre>
         </section>
 
         <!-- 幻灯片6: 图片展示 -->
@@ -189,7 +185,12 @@
         <button id="nextBtn" onclick="changeSlide(1)">下一页 ▶</button>
         <button id="exportBtn" onclick="exportToPDF()">导出 PDF</button>
     </div>
-
+    <pre class="mermaid">
+  graph LR
+      A --- B
+      B-->C[fa:fa-ban forbidden]
+      B-->D(fa:fa-spinner);
+    </pre>
     <script src="script.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -200,6 +201,15 @@
                 ]
             });
         });
+    </script>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+        
+        // Disable auto-render to render manually when slide has dimensions
+        mermaid.initialize({ startOnLoad: false });
+        
+        // Attach to window so script.js can call it
+        window.mermaid = mermaid;
     </script>
 </body>
 </html>
