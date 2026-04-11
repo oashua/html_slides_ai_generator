@@ -203,9 +203,9 @@ html_sides_ai_generator/
 
 
 ## to do
-- [v] 导出功能
+- [x] 导出功能
   - [ ] 导出pdf尺寸与网页不一致
-- [ ] mermaid支持
+- [x] mermaid支持
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=oashua/html_sides_ai_generator&type=Date)](https://star-history.com/#oashua/html_sides_ai_generator&Date)
